@@ -41,7 +41,7 @@ def leitor_msg(fname, person_name,ling):
     lista_dias = []
 
     d = 0
-    with open(fname) as f:
+    with open(fname, encoding="utf8") as f:
         for line in f:
             palavras = line.split()
             #verifica se é mensagem
@@ -110,7 +110,7 @@ def leitor_msg(fname, person_name,ling):
     for i in range(1,len(nmsg1)):
         nmsg1[i] += nmsg1[i-1] 
     
-    with open('results/' + person_name[0:len(person_name)-4]+"_result.csv", "w") as f:
+    with open('results/' + person_name[0:len(person_name)-4]+"_result.csv", "w", encoding="utf8") as f:
         f.write("name," + "date,"+ "value" + "\n")
         for i in range(len(nmsg1)):
             f.write(person_name[0:len(person_name)-4] + ",{}, {}\n".format(lista_dias[i], nmsg1[i]))
@@ -135,7 +135,7 @@ def leitor_words(fname, person_name,ling):
 
     d = 0
     message_valid = False
-    with open(fname) as f:
+    with open(fname, encoding="utf8") as f:
         for line in f:
             palavras = line.split()
             #verifica se é mensagem
@@ -215,7 +215,7 @@ def leitor_words(fname, person_name,ling):
     for i in range(1,len(nmsg1)):
         nmsg1[i] += nmsg1[i-1] 
     
-    with open('results/' + person_name[0:len(person_name)-4]+"_result.csv", "w") as f:
+    with open('results/' + person_name[0:len(person_name)-4]+"_result.csv", "w", encoding="utf8") as f:
         f.write("name," + "date,"+ "value" + "\n")
         for i in range(len(nmsg1)):
             f.write(person_name[0:len(person_name)-4] + ",{}, {}\n".format(lista_dias[i], nmsg1[i]))
